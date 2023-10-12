@@ -5,8 +5,8 @@ import requests
 
 env = environ.Env()
 environ.Env.read_env('.env')
-print('API_KEY: ', env('API_KEY'))
-print('API_TOKEN: ', env('API_TOKEN'))
+print('API_KEY: ', env('7c9f82c4bdd238bcffe74757df1c7bf5'))
+print('API_TOKEN: ', env('eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YzlmODJjNGJkZDIzOGJjZmZlNzQ3NTdkZjFjN2JmNSIsInN1YiI6IjY1Mjc4NDY0ZmQ2MzAwNWQ3YTJkMzI2ZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.go2c6UNVEoT2-J3FMTIv-Mqk1wZdZ3a1jyGFqkvEiqY'))
 
 '''
 url --request GET \
