@@ -93,8 +93,8 @@ def add_movie(movie_id):
         for credit in credits_list:
             sql = '''INSERT INTO movies_moviecredit (movie_id, person_id, job_id)
                      SELECT id,
-                     (SELECT id FROM movies_person WHERE name = %s)  as person_id,
-                     (SELECT id FROM movies_job WHERE name = %s)  as job_id
+                     (SELECT id FROM movies_person WHERE name = %s LIMIT 1)  as person_id,
+                     (SELECT id FROM movies_job WHERE name = %s LIMIT 1)  as job_id
                      FROM movies_movie
                      WHERE title = %s'''
             cur.execute(sql, (credit[0], credit[1], m['title'],))
