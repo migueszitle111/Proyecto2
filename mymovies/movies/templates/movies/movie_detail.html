@@ -3,16 +3,24 @@
 <html lang="en">
 
 <head>
-    <title>{{movie.title}}</title>
+    <title>{{ movie.title }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{% static 'movies/assets/css/tailwind-style.css' %}" rel="stylesheet">
 </head>
 
-<body>
-    <h1> {{ movie.title }} ({{ movie.release_date|date:"Y" }}) </h1>
-    <p> {{ movie.overview }} </p>
-    <img src="{% static 'movies/assets/img'|add:movie.poster_path %}" alt="">
+<body class="font-sans max-w-4xl mx-auto bg-stone-900 text-red-50">
+    <header class="h-12 w-full text-center mx-auto mt-5 border-b-2 border-rose-800">
+        <h1 class=" text-3xl font-medium text-center">{{ movie.title }}</h1>
+    </header>
+    <div class="max-w-4xl mx-auto mt-8">
+        <img src="{% static 'movie_assets/img/' %}{{ movie.poster_path }}" alt="{{ movie.title }} Poster"
+            class="w-full">
+        <div class="mt-4">
+            <h2 class="text-2xl font-semibold">{{ movie.title }} ({{ movie.release_date|date:"Y" }})</h2>
+            <p class="mt-4 text-gray-300">{{ movie.overview }}</p>
+        </div>
+    </div>
 </body>
 
 </html>
