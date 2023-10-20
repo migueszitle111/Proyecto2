@@ -25,10 +25,11 @@
             {% if movie_list %}
             {% for movie in movie_list %}
             <div class="movie-card p-2 w-1/3">
-                <p class="text-white font-bold">
-                    <a href="/movies/{{ movie.id }}/">{{ movie.title }}</a>
+                <p class="text-white font-semibold text-2xl">{{ movie.title }}</p>
+                <a href="/movies/{{ movie.id }}/">
                     <img src="{% static 'movies/assets/img' %}{{ movie.poster_path }}" alt="{{ movie.title }} Poster"
-                        </p>
+                        class="transform scale-100 hover:scale-110 transition-transform">
+                </a>
             </div>
             {% endfor %}
             {% else %}
