@@ -12,5 +12,6 @@ def index(request):
 
 def movie_detail(request, movie_id):
     movie = Movie.objects.get(pk=movie_id)
-    context = {'movie': movie}
+    movie_credits = movie.moviecredit_set.all()  # Obtenemos las MovieCre
+    context = {'movie': movie ,'movie_credits': movie_credits}
     return render(request, "movies/movie_detail.html", context=context)
