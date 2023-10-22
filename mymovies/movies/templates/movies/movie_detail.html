@@ -6,154 +6,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tailwind Profile Card Template : Tailwind Toolbox</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-
-    <!-- Font Awesome if you need it
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-  -->
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
-    <!--Replace with your tailwind.css once created-->
-
 </head>
 
 <body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover"
     style="background-image:url('https://dt40dm21pj8em.cloudfront.net/uploads/froala/file/4707/%EC%98%81%ED%99%94%20%EB%B0%B0%EA%B8%89%201.jpg');">
     <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
-
         <!--Main Col-->
         <div id="profile"
             class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
             <div class="p-4 md:p-12 text-center lg:text-left">
-                <!-- Image for mobile view-->
-                <div class="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center"
-                    style="background-image: url('https://source.unsplash.com/MP0IUfwrn0A')"></div>
-
                 <h1 class="text-3xl font-bold pt-8 lg:pt-0">{{ movie.title }}</h1>
                 <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
                 <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start"><svg
-                        class="h-4 fill-current text-green-700 pr-4" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20">
-                        <path
-                            d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
-                    </svg> Release date: {{ movie.release_date|date:"Y" }}</p>
+                        class="h-8 fill-current text-red-500 pr-4" fill="#ff3838" version="1.1" id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 498.63 498.63" xml:space="preserve" stroke="#ff3838">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g>
+                                <g id="Layer_8_11_">
+                                    <path
+                                        d="M43.734,222.979c-0.941-1.323-1.3-2.969-1.009-4.567c5.474-29.439,21.583-56.329,44.861-75.015 c1.27-1.021,2.9-1.486,4.52-1.278c1.62,0.213,3.089,1.064,4.052,2.369l30.257,40.753c1.47,1.967,1.541,4.561,0.38,6.572 c-0.339,0.588-0.788,1.133-1.331,1.592c-10.636,8.928-18.004,21.215-20.827,34.999c-0.623,3.139-3.62,5.212-6.786,4.723 l-50.145-7.699C46.104,225.186,44.665,224.303,43.734,222.979z M102.413,264.909c-0.117-0.711-0.371-1.368-0.714-1.963 c-1.158-2.015-3.444-3.24-5.888-2.955l-50.419,5.822c-1.618,0.187-3.086,1.033-4.083,2.32c-0.986,1.296-1.401,2.938-1.149,4.553 c4.543,29.505,19.774,56.902,42.53,76.366c1.237,1.057,2.845,1.565,4.465,1.412c1.609-0.153,3.098-0.957,4.113-2.217 l31.748-39.576c1.989-2.498,1.699-6.131-0.712-8.237C111.782,291.099,104.832,278.584,102.413,264.909z M201.007,324.648 c-1.159-2.973-4.455-4.542-7.474-3.514c-13.352,4.454-27.676,4.214-40.727-0.524c-0.679-0.252-1.365-0.362-2.043-0.362 c-2.332,0-4.534,1.357-5.502,3.623l-20.173,46.577c-0.646,1.494-0.657,3.186-0.021,4.689c0.621,1.517,1.835,2.688,3.359,3.277 c27.823,10.813,59.166,11.327,87.402,1.336c1.529-0.537,2.78-1.675,3.458-3.146c0.679-1.472,0.723-3.157,0.128-4.674 L201.007,324.648z M307.974,275.246c-0.931-1.312-2.374-2.21-3.971-2.451l-50.146-7.693c-3.152-0.481-6.162,1.587-6.777,4.723 c-2.824,13.784-10.186,26.063-20.815,34.992c-0.562,0.472-1.011,1.008-1.347,1.6c-1.16,2.008-1.081,4.596,0.381,6.565 l30.253,40.752c0.979,1.308,2.438,2.171,4.057,2.378c1.607,0.197,3.237-0.252,4.524-1.28 c23.271-18.687,39.381-45.576,44.87-75.021C309.289,278.224,308.915,276.576,307.974,275.246z M249.292,233.323 c0.118,0.706,0.369,1.368,0.712,1.956c1.159,2.017,3.447,3.24,5.888,2.958l50.419-5.833c1.619-0.184,3.086-1.026,4.081-2.32 c0.998-1.294,1.401-2.935,1.161-4.55c-4.548-29.505-19.774-56.896-42.54-76.362c-1.236-1.053-2.845-1.562-4.464-1.412 c-1.609,0.151-3.096,0.953-4.113,2.219l-31.736,39.576c-2.001,2.496-1.708,6.131,0.7,8.238 C239.924,207.128,246.87,219.651,249.292,233.323z M150.695,173.574c1.15,2.978,4.454,4.54,7.475,3.513 c13.355-4.448,27.676-4.213,40.726,0.534c0.678,0.246,1.368,0.364,2.045,0.364c2.332,0,4.531-1.368,5.502-3.62l20.16-46.58 c0.656-1.497,0.656-3.188,0.035-4.689c-0.624-1.508-1.838-2.685-3.362-3.278c-27.819-10.815-59.165-11.319-87.402-1.346 c-1.528,0.544-2.78,1.682-3.455,3.154c-0.679,1.474-0.726,3.16-0.142,4.673L150.695,173.574z M176.69,218.311 c-16.809,0-30.449,13.633-30.449,30.449c0,16.812,13.64,30.449,30.449,30.449c16.811,0,30.45-13.637,30.45-30.449 C207.14,231.944,193.501,218.311,176.69,218.311z M498.631,386.908l-22.393,36.302h-302.35C78.01,423.21,0,345.189,0,249.316 C0,153.432,78.01,75.42,173.888,75.42c95.891,0,173.902,78.012,173.902,173.896c0,55.928-26.572,105.756-67.734,137.592H498.631z M441.547,395.85h13.098l5.453-6.49h-13.111L441.547,395.85z M412.369,395.85h13.102l5.459-6.49h-13.122L412.369,395.85z M385.886,395.85h13.098l5.453-6.49h-13.111L385.886,395.85z M385.556,409.595h75.951l8.395-12.586H393.95L385.556,409.595z M357.834,395.85h13.101l5.439-6.49h-13.101L357.834,395.85z M328.734,395.85h13.1l5.439-6.49h-13.098L328.734,395.85z M298.059,395.85h13.102l5.439-6.49h-13.102L298.059,395.85z M173.888,411.226c89.283,0,161.907-72.635,161.907-161.91 c0-89.274-72.624-161.903-161.907-161.903c-89.272,0-161.897,72.629-161.897,161.903 C11.991,338.591,84.616,411.226,173.888,411.226z M262.709,413.098h-13.973l-5.614,6.921h13.961L262.709,413.098z M268.947,395.85 h13.101l5.439-6.49h-13.101L268.947,395.85z M293.746,413.098h-13.976l-5.613,6.921h13.976L293.746,413.098z M326.471,413.098 h-13.978l-5.613,6.921h13.975L326.471,413.098z M357.517,413.098h-13.985l-5.602,6.921h13.965L357.517,413.098z M363.974,396.998 h-75.962l-8.395,12.588h75.952L363.974,396.998z M387.427,413.098h-13.975l-5.612,6.921h13.974L387.427,413.098z M415.674,413.098 H401.7l-5.616,6.921h13.975L415.674,413.098z M446.799,413.098h-13.975l-5.616,6.921h13.965L446.799,413.098z M477.836,413.098 H463.86l-5.612,6.921h13.975L477.836,413.098z M483.756,395.85l5.439-6.49h-13.111l-5.426,6.49H483.756z">
+                                    </path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg> Año: {{ movie.release_date|date:"Y" }}</p>
 
-                <p class="pt-8 text-sm">{{ movie.overview }}</p>
-                <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start text-2xl">Generos:
+                <p class="pt-8 text-sm text-justify">{{ movie.overview }}</p>
+                <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start text-2xl">
+                    Genero(s):
                 </p>
                 <p>
                     {% for genre in movie.genres.all %}
-                    {{ genre.name }}
+                    <a href="{% url 'genre_movies' genre.id %}">
+                        {{ genre.name }}</a>
                     {% if not forloop.last %}, {% endif %}
                     {% endfor %}
                 </p>
                 <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start text-2xl">Duracion:
                 </p>
                 <p>{{ movie.running_time }} minutos</p>
-
-
-                <div class="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
-                    <a class="link" href="#" data-tippy-content="Actor"><svg
-                            class="h-6 fill-current text-gray-600 hover:text-green-700" role="img" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <title>{{movie.genres}}</title>
-                            <path
-                                d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24h11.494v-9.294H9.689v-3.621h3.129V8.41c0-3.099 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24h-1.921c-1.5 0-1.792.721-1.792 1.771v2.311h3.584l-.465 3.63H16.56V24h6.115c.733 0 1.325-.592 1.325-1.324V1.324C24 .593 23.408 0 22.676 0" />
-                        </svg></a>
-                    <a class="link" href="#" data-tippy-content="@twitter_handle"><svg
-                            class="h-6 fill-current text-gray-600 hover:text-green-700" role="img" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <title>Twitter</title>
-                            <path
-                                d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z" />
-                        </svg></a>
-
+                <div class="grid grid-cols-2 gap-1">
+                    <div class="pt-4 text-base font-bold text-2xl flex items-center justify-center lg:justify-start">
+                        Presupuesto:</div>
+                    <div class="pt-4 text-base font-bold text-2xl flex items-center justify-center lg:justify-start">
+                        Ingresos:</div>
+                    <div> ${{ movie.budget}} dólares</div>
+                    <div>${{ movie.revenue }} dolares</div>
                 </div>
-
-                <!-- Use https://simpleicons.org/ to find the svg for your preferred product -->
-
             </div>
-
-
         </div>
-
         <!--Img Col-->
-        <div class="w-full lg:w-2/5">
-            <!-- Big profile image for side bar (desktop) -->
+        <div class="w-full lg:w-2/5 ">
             <img src="{% static 'movies/assets/img' %}{{ movie.poster_path }}" alt="{{ movie.title }} Poster"
-                class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block">
-            <!-- Image from: http://unsplash.com/photos/MP0IUfwrn0A -->
-
+                class="rounded-none lg:rounded-lg shadow-3xl hidden lg:block">
         </div>
-
-
-        <!-- Pin to top right corner -->
-        <div class="absolute top-0 right-0 h-12 w-18 p-4">
-            <button class="js-change-theme focus:outline-none">🌙</button>
-        </div>
-
     </div>
-
-    <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@4"></script>
-    <script>
-        //Init tooltips
-        tippy('.link', {
-            placement: 'bottom'
-        })
-
-        //Toggle mode
-        const toggle = document.querySelector('.js-change-theme');
-        const body = document.querySelector('body');
-        const profile = document.getElementById('profile');
-
-        toggle.addEventListener('click', () => {
-
-            if (body.classList.contains('text-gray-900')) {
-                toggle.innerHTML = "☀️";
-                body.classList.remove('text-gray-900');
-                body.classList.add('text-gray-100');
-                profile.classList.remove('bg-white');
-                profile.classList.add('bg-gray-900');
-            } else {
-                toggle.innerHTML = "🌙";
-                body.classList.remove('text-gray-100');
-                body.classList.add('text-gray-900');
-                profile.classList.remove('bg-gray-900');
-                profile.classList.add('bg-white');
-
-            }
-        });
-
-
-
-    </script>
-
 </body>
 <footer
-    class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-40 lg:my-0 rounded-lg lg:rounded-l-lg lg:rounded shadow-2xl bg-white opacity-75">
-    <div>
+    class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-0 lg:my-0 rounded-lg lg:rounded-l-lg lg:rounded shadow-1xl bg-white opacity-75">
+    <div class="max-w-1xl  h-1  flex-wrap mx-auto my-9 lg:my-0">
         <p
-            class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start text-2xl text-black text-center ">
+            class="pt-1 text-base font-bold flex items-center justify-center lg:justify-start text-2xl text-black text-center">
             Reparto:</p>
+        <div class="mx-auto lg:mx-0 w-5/5 pt-1 border-b-2 border-green-500 opacity-25"></div>
+
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
         {% for movie_credit in movie_credits %}
-        <div class="p-4 border border-gray-200 rounded-lg bg-white shadow-lg">
+        <div class="p-4 rounded-none -lg bg-white shadow-lg">
             <p class="text-lg font-semibold text-center text-black">{{ movie_credit.person.name }}</p>
             <p class="text-sm text-center text-gray-600">{{ movie_credit.job.name }}</p>
         </div>
         {% endfor %}
     </div>
 </footer>
-
-
-
-
-
-
-
 
 </html>
