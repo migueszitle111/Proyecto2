@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" />
+</head>
+
+<body class="font-sans antialiased text-gray-900 leading-normal tracking-wider bg-cover"
+    style="background-image:url('https://dt40dm21pj8em.cloudfront.net/uploads/froala/file/4707/%EC%98%81%ED%99%94%20%EB%B0%B0%EA%B8%89%201.jpg');">
+    <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
+        <!--Main Col-->
+        <div id="profile"
+            class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
+            <div class="p-4 md:p-12 text-center lg:text-left">
+                <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start text-2xl">
+                    {{ person.name }}
+                </p>
+                <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start text-2xl">
+                    Películas en las que ha participado:
+                </p>
+                <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
+                <p>
+                    {% for movie_credit in movie_credits %}
+                    <li>
+                        {{ movie_credit.movie.title }} ({{ movie_credit.job.name }})
+                    </li>
+                    {% endfor %}
+                </p>
+
+            </div>
+        </div>
+    </div>
+</body>

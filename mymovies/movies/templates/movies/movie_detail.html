@@ -82,7 +82,9 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
         {% for movie_credit in movie_credits %}
         <div class="p-4 rounded-none -lg bg-white shadow-lg">
-            <p class="text-lg font-semibold text-center text-black">{{ movie_credit.person.name }}</p>
+            <a href="{% url 'person_movies' movie_credit.person.id %}">
+                <p class="text-lg font-semibold text-center text-black">{{ movie_credit.person.name }}</p>
+            </a>
             <p class="text-sm text-center text-gray-600">{{ movie_credit.job.name }}</p>
         </div>
         {% endfor %}
