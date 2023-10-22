@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from movies.models import Movie,Genre
+from movies.models import Movie,Genre, Person, MovieCredit
 # Create your views here.
 
 
@@ -24,3 +24,9 @@ def genre_movies(request, genre_id):
         'movies': movies,
     }
     return render(request, 'movies/genre_movies.html', context=context)
+
+def person_c(request, person_id):
+    persona = Person.objects.get(pk=person_id)
+    credits = MovieCredit.objects.filter(person=persona)
+    context = {'persona': persona, 'credits': credits}
+    return render(request, 'movies/person.html', context)s

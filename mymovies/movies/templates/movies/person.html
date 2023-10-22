@@ -1,0 +1,11 @@
+{% block content %}
+<h1>{{ persona.name }}</h1>
+<h2>Películas en las que ha participado:</h2>
+<ul>
+    {% for credit in credits %}
+    <li>
+        {{ credit.movie.title }} ({{ credit.job.name }})
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
