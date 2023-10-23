@@ -37,8 +37,7 @@
                             </g>
                         </g>
                     </svg> Año: {{ movie.release_date|date:"Y" }}</p>
-
-                <p class="pt-8 text-sm text-justify">{{ movie.overview }}</p>
+                <p class="pt-3 text-sm text-justify">{{ movie.overview }}</p>
                 <p class="pt-4 text-base font-bold flex items-center justify-center lg:justify-start text-2xl">
                     Genero(s):
                 </p>
@@ -81,9 +80,9 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
         {% for movie_credit in movie_credits %}
-        <div class="p-4 rounded-none -lg bg-white shadow-lg">
-            <a href="{% url 'person_movies' movie_credit.person.id %}">
-                <p class="text-lg font-semibold text-center text-black">{{ movie_credit.person.name }}</p>
+        <div class="p-4 rounded-none -lg bg-white shadow-lg transform scale-100 hover:scale-110 transition-transform"">
+            <a href=" {% url 'person_movies' movie_credit.person.id %}">
+            <p class="text-lg font-semibold text-center text-black">{{ movie_credit.person.name }}</p>
             </a>
             <p class="text-sm text-center text-gray-600">{{ movie_credit.job.name }}</p>
         </div>

@@ -27,6 +27,11 @@ def genre_movies(request, genre_id):
 
 def person_movies(request, person_id):
     person = Person.objects.get(pk=person_id)
+    if person.profile_path:
+        base_url = "https://www.themoviedb.org/t/p/w300_and_h450_bestv2"
+        profile_url = base_url + person.profile_path
+    else:
+        profile_url = None  
     movie_credits = MovieCredit.objects.filter(person=person)
-    context = {'person': person, 'movie_credits': movie_credits}
-    return render(request, 'movies/person_movies.html', context)
+    context = {'person': person, 'movie_credits': movie_credits,'profile_url': profile_url}
+    return render(request, 'movies/person_movies.html', context=context)

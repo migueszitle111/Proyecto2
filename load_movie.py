@@ -29,12 +29,12 @@ def add_movie(movie_id):
         r = requests.get(f'https://api.themoviedb.org/3/movie/{movie_id}/credits?language=en-US', headers=headers)
         credits = r.json()
 
-        actors = [(actor['name'], actor['known_for_department']) for actor in credits['cast'][:10]]
-        crew = [(job['name'], job['job']) for job in credits['crew'][:15]]
+        actors = [(actor['name'], actor['known_for_department'], actor.get('profile_path')) for actor in credits['cast'][:10]]
+        crew = [(job['name'], job['job'], None) for job in credits['crew'][:15]]  # Crew members don't have profile_path
 
         credits_list = actors + crew
 
-        jobs = [job for person, job in credits_list]
+        jobs = [job for person, job, _ in credits_list]
         jobs = set(jobs)
 
         sql = 'SELECT * FROM movies_job WHERE name IN %s'
@@ -45,15 +45,15 @@ def add_movie(movie_id):
         sql = 'INSERT INTO movies_job (name) values  (%s)'
         cur.executemany(sql, jobs_to_create)
 
-        persons = [person for person, job in credits_list]
+        persons = [person for person, _, _ in credits_list]
         persons = set(persons)
 
         sql = 'SELECT * FROM movies_person WHERE name IN %s'
         cur.execute(sql, (tuple(persons),))
         persons_in_db = cur.fetchall()
 
-        persons_to_create = [(name,) for name in persons if name not in [name for id, name in persons_in_db]]
-        sql = 'INSERT INTO movies_person (name) values  (%s)'
+        persons_to_create = [(name, profile_path) for name, _, profile_path in credits_list if name not in [name for id, name, _ in persons_in_db]]
+        sql = 'INSERT INTO movies_person (name, profile_path) values  (%s, %s)'
         cur.executemany(sql, persons_to_create)
 
         genres = [d['name'] for d in m['genres']]

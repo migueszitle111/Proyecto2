@@ -1,9 +1,6 @@
-# Create your models here.
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
-
-
 
 class Genre(models.Model):
     name = models.CharField(max_length=200)
@@ -21,9 +18,11 @@ class Job(models.Model):
 
 class Person(models.Model):
     name = models.CharField(max_length=128)
-
+    profile_path = models.CharField(max_length=200, blank=True, editable=True)
+    
     def __str__(self):
      return self.name
+    
 
 
 class Movie(models.Model):
