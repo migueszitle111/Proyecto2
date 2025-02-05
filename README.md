@@ -1,6 +1,2 @@
-# Proyecto2
-Prueba con terminal
+# Proyecto2 
 
-Prueba 2
-
-pruebas env
